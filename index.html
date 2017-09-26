@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <input type="radio" name="state" id="id1" checked="checked"/>
+      <div class="desc">First State
+        <p>First state description</p>
+        <label class="btn" for="id2">Begin</label>
+      </div>
+      <input type="radio" name="state" id="id2"/>
+      <div class="desc">Second state
+        <p> Second state description </p>
+        <label class="btn" for="id3">Enter state 3</label>
+      </div>
+      <input type="radio" name="state" id="id3"/>
+      <div class="desc">Third state
+        <p>On the fourth state thins get more interesting, we show button to enter next state depending on chosen answer, this allows for some simple validation / different routes</p>
+        <label class="btn" for="id4">Enter fourth state</label>
+      </div>
+      <input type="radio" name="state" id="id4"/>
+      <div class="desc">Fourth state
+        <p> Choose one of the options and enter final state</p>
+        <div class="single_option">
+          <input type="radio" name="nextstate" id="fakeid5"/>
+          <div class="desc"><label class="btn" for="id5">Enter state 5</label></div><label for="fakeid5">State 5</label>
+        </div>
+        <div class="single_option">
+          <input type="radio" name="nextstate" id="fakeid6"/>
+          <div class="desc"><label class="btn" for="id6">Enter state 6</label></div><label for="fakeid6">State 6</label>
+        </div>
+        <div class="single_option">
+          <input type="radio" name="nextstate" id="fakeid7"/>
+          <div class="desc"><label class="btn" for="id7">Enter state 7</label></div><label for="fakeid7">State 7</label>
+        </div>
+      </div>
+      <input type="radio" name="state" id="id5"/>
+      <div class="desc">State 5 description
+        <p>Finished!</p>
+      </div>
+      <input type="radio" name="state" id="id6"/>
+      <div class="desc">State 6 description
+        <p>Finished!</p>
+      </div>
+      <input type="radio" name="state" id="id7"/>
+      <div class="desc">State 7 description
+<p>Finished!</p>
+      </div>
+    </div>
+  </body>
+  <style>
+  html, body{
+    box-sizing:border-box;
+  }
+  .wrapper{
+  width:500px;
+  margin:10% auto 0 auto;
+  background:#d5d5d5;
+  position:relative;
+  padding:20px;
+  height:300px;
+  }
+  .wrapper > input{
+  visibility:hidden;
+  }
+  .single_option >input{
+    display:none;
+  }
+  .single_option >label:before{
+    content:"";
+    width:15px;
+    height:15px;
+    display:inline-block;
+    border:2px solid #fff;
+    margin-right:10px;
+    top:4px;
+    position:relative;
+     line-height:15px;
+        text-align:center;
+  }
+    .single_option >input:checked ~ label:before{
+       
+      background:#fff;;
+    }
+  .desc{
+  display:none;
+  }
+  label{
+    display:inline-block;
+  }
+  input[type="radio"]:checked+.desc{
+  display:block;
+  }
+  .btn{
+    cursor:pointer;
+  position:absolute;
+  bottom:20px;
+  width:70%;
+  left:50%;
+  transform: translateX(-50%);
+  display:block;
+  background:#19c4b1;
+  padding:5px 10px ;
+  }
+  </style>
+</html>
